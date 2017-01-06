@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+    	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven />
+    <context:component-scan base-package="com">
+        <context:exclude-filter expression="org.springframework.stereotype.Controller"
+                                type="annotation" />
+    </context:component-scan>
+
+    <!--<context:property-placeholder location="classpath:jdbc.properties"/>-->
+    <!-- <bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+        <property name="driver" value="${jdbc.driver}" />
+        <property name="driverUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="alias" value="${proxool.alias}" />
+        <property name="houseKeepingTestSql" value="${proxool.houseKeepingTestSql}" />
+        <property name="prototypeCount" value="${proxool.prototypeCount}" />
+        <property name="minimumConnectionCount" value="${proxool.minimumConnectionCount}" />
+        <property name="maximumActiveTime" value="3600000" />
+    </bean> -->
+    <!--<bean id="dataSource" class="${jdbc.dataSource}">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        &lt;!&ndash; <property name="alias" value="${proxool.alias}" />
+        <property name="houseKeepingTestSql" value="${proxool.houseKeepingTestSql}" />
+        <property name="prototypeCount" value="${proxool.prototypeCount}" />
+        <property name="minimumConnectionCount" value="${proxool.minimumConnectionCount}" />
+        <property name="maximumActiveTime" value="3600000" /> &ndash;&gt;
+    </bean>-->
+
+
+</beans>
